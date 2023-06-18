@@ -1,0 +1,30 @@
+{
+  "name": "clothio-backend",
+  "version": "1.0.0",
+  "description": "Backend application for clothio app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./src/index.ts",
+    "dev": "nodemon ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merakserhat/clothio-backend.git"
+  },
+  "author": "Serhat Merak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/merakserhat/clothio-backend/issues"
+  },
+  "homepage": "https://github.com/merakserhat/clothio-backend#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.1",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
