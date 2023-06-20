@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import express, { Request, Response, Application } from "express";
 import { config } from "./utils/config";
 import Logging from "./utils/logging";
