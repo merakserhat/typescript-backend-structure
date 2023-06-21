@@ -3,12 +3,18 @@ import express, { Request, Response, Application } from "express";
 import { config } from "./utils/config";
 import Logging from "./utils/logging";
 import mongoose from "mongoose";
+import testRouter from "./routes/test";
 
 const app: Application = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get("/", (req: Request, res: Response): void => {
   res.send("Server is active!");
 });
+
+///// Routes
+app.use("/test", testRouter);
 
 ///// Start Server
 app.listen(config.port, async () => {

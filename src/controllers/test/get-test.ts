@@ -8,17 +8,17 @@ import { ApiErrorCode } from "../../utils/error-codes";
 
 class GetTestRequest {
   @Expose()
-  errorRequest: boolean;
+  errorRequest: string;
 }
 
 // base endpoint structure
-module.exports.getTest = (req: Request, res: Response) => {
-  console.log(JSON.stringify(req));
+const getTest = (req: Request, res: Response) => {
+  Logging.info(JSON.stringify(req.query, Object.getOwnPropertyNames(req.query)));
 
   try {
-    const getTestRequest: GetTestRequest = Mapper.map(GetTestRequest, JSON.parse(req.body));
+    const getTestRequest: GetTestRequest = Mapper.map(GetTestRequest, req.query);
 
-    if (getTestRequest.errorRequest) {
+    if (getTestRequest.errorRequest === "true") {
       return ApiHelper.getErrorResponse(res, 400, [
         {
           errorCode: ApiErrorCode.WRONG_PASSWORD,
@@ -34,6 +34,8 @@ module.exports.getTest = (req: Request, res: Response) => {
     if (ApiHelper.isInvalidRequestBodyError(error)) {
       return ApiHelper.getErrorResponseForInvalidRequestBody(res);
     }
-    ApiHelper.getErrorResponseForCrash(res, JSON.stringify(error));
+    ApiHelper.getErrorResponseForCrash(res, JSON.stringify(Object.getOwnPropertyNames(req)));
   }
 };
+
+export default getTest;
