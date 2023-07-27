@@ -1,1 +1,1 @@
-# clothio-backend
+# typescript-backend-structure

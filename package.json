@@ -1,7 +1,7 @@
 {
-  "name": "clothio-backend",
+  "name": "typescript-backend-structure",
   "version": "1.0.0",
-  "description": "Backend application for clothio app",
+  "description": "Base ackend application with typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/merakserhat/clothio-backend.git"
+    "url": "git+https://github.com/merakserhat/typescript-backend-structure.git"
   },
   "author": "Serhat Merak",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/merakserhat/clothio-backend/issues"
+    "url": "https://github.com/merakserhat/typescript-backend-structure/issues"
   },
-  "homepage": "https://github.com/merakserhat/clothio-backend#readme",
+  "homepage": "https://github.com/merakserhat/typescript-backend-structure#readme",
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.3.1",
